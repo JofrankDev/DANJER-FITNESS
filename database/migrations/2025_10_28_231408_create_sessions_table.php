@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('description',25);
             $table->unsignedInteger('capacity');
             $table->date('date');
-            $table->dateTime('start_datetime');
+            $table->time('start_datetime');
             $table->unsignedInteger('duration_minutes');
             $table->timestamps();
         });

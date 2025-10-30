@@ -26,7 +26,7 @@ return new class extends Migration
             //fields
 
             $table->string('name',25);
-            $table->string('description',300);
+            $table->string('description',255);
             $table->unsignedInteger('capacity');
             $table->date('date');
             $table->time('start_datetime');

@@ -26,8 +26,8 @@
                 </ul>
                 <div class="nav-buttons">
                     @guest
-                        <a href="#" class="btn btn-outline">Iniciar Sesión</a>
-                        <a href="#" class="btn btn-primary">Registrarse</a>
+                        <a href="{{ route('login') }}" class="btn btn-outline">Iniciar Sesión</a>
+                        <a href="{{ route('register') }}" class="btn btn-primary">Registrarse</a>
                     @else
                         <a href="#" class="btn btn-primary">Mi Cuenta</a>
                     @endguest

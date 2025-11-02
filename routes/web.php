@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     //$maker =  Plan::factory()->count(3)->make();
     //dd($maker);
-    return view('welcome');
+    return view('test');
+    //return view('welcome');
+    
 });

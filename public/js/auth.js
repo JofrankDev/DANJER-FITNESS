@@ -182,6 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+<<<<<<< HEAD
 
 // ============================================
 // FUNCIONALIDAD DEL MODAL DE TÉRMINOS Y CONDICIONES
@@ -251,3 +252,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+=======
+>>>>>>> 1d17bad (Se añadió las vistas de inicio de sesión y registro)

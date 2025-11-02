@@ -1,8 +1,9 @@
 <?php
 
-//use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
-//use App\Models\Plan;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +15,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Ruta principal
 Route::get('/', function () {
+<<<<<<< Updated upstream
     //$maker =  Plan::factory()->count(3)->make();
     //dd($maker);
     return view('welcome');
+=======
+    return view('home');
+})->name('home');
+
+// Rutas de autenticación (solo para invitados)
+Route::middleware('guest')->group(function () {
+    // Mostrar formularios
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+    
+    // Procesar formularios
+    Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+    Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
+});
+
+// Rutas protegidas (requieren autenticación)
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+>>>>>>> Stashed changes
 });

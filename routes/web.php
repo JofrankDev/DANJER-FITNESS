@@ -18,4 +18,13 @@ Route::get('/', function () {
     //$maker =  Plan::factory()->count(3)->make();
     //dd($maker);
     return view('home');
-});
+})->name('home');
+
+// Rutas de autenticación
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');

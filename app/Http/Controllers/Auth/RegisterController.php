@@ -77,7 +77,6 @@ class RegisterController extends Controller
 
         // Autenticar automáticamente al usuario
         Auth::login($user);
-
         // Solo regenerar sesión si no es una petición JSON/API
         if ($request->hasSession()) {
             $request->session()->regenerate();

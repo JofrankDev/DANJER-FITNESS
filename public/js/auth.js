@@ -182,3 +182,72 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// ============================================
+// FUNCIONALIDAD DEL MODAL DE TÉRMINOS Y CONDICIONES
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const termsLink = document.getElementById('termsLink');
+    const modal = document.getElementById('termsModal');
+    const closeModal = document.getElementById('closeModal');
+    const acceptTerms = document.getElementById('acceptTerms');
+    const termsCheckbox = document.getElementById('terms');
+
+    // Abrir modal al hacer clic en el enlace
+    if (termsLink) {
+        termsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    // Cerrar modal al hacer clic en la X
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            closeModalWindow();
+        });
+    }
+
+    // Aceptar términos y cerrar modal
+    if (acceptTerms) {
+        acceptTerms.addEventListener('click', function() {
+            if (termsCheckbox) {
+                termsCheckbox.checked = true;
+            }
+            closeModalWindow();
+        });
+    }
+
+    // Cerrar modal al hacer clic fuera del contenido
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModalWindow();
+            }
+        });
+    }
+
+    // Cerrar modal con la tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
+            closeModalWindow();
+        }
+    });
+
+    // Función para abrir el modal
+    function openModal() {
+        if (modal) {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        }
+    }
+
+    // Función para cerrar el modal
+    function closeModalWindow() {
+        if (modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = ''; // Restaurar scroll del body
+        }
+    }
+});

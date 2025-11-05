@@ -93,7 +93,7 @@ class RegisterController extends Controller
             ], 201);
         }
 
-        return redirect()->intended(route('dashboard'))
+        return redirect()->intended(route('home'))
             ->with('success', '¡Registro exitoso! Bienvenido.');
     }
 }

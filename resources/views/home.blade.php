@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Navegación -->
     <nav class="navbar" id="navbar">
@@ -30,6 +33,13 @@
                         <a href="{{ route('register') }}" class="btn btn-primary">Registrarse</a>
                     @else
                         <a href="#" class="btn btn-primary">Mi Cuenta</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                            @csrf
+                            <button type="submit" class="btn btn-primary">
+                                Cerrar Sesión
+                            </button>
+                        </form>
+
                     @endguest
                 </div>
                 <div class="hamburger" id="hamburger">
@@ -47,7 +57,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title animate-fade-in">Transforma Tu Cuerpo<br><span>Transforma Tu Vida</span></h1>
-                <p class="hero-subtitle animate-fade-in-delay">Únete a la mejor comunidad fitness y alcanza tus objetivos con entrenadores certificados</p>
+                <p class="hero-subtitle animate-fade-in-delay">Únete a la mejor comunidad fitness y alcanza tus
+                    objetivos con entrenadores certificados</p>
                 <div class="hero-buttons animate-fade-in-delay-2">
                     <a href="#planes" class="btn btn-hero">Comienza Ahora</a>
                     <a href="#clases" class="btn btn-outline-white">Ver Clases</a>
@@ -65,7 +76,8 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                             <circle cx="9" cy="7" r="4"></circle>
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -77,7 +89,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                             <line x1="16" y1="2" x2="16" y2="6"></line>
                             <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -89,7 +102,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
@@ -99,7 +113,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                         </svg>
                     </div>
@@ -119,7 +134,8 @@
             </div>
             <div class="classes-grid">
                 <div class="class-card">
-                    <div class="class-image" style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="class-image"
+                        style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         <div class="class-overlay">
                             <h3>Yoga</h3>
                             <p>Equilibra cuerpo y mente</p>
@@ -134,7 +150,8 @@
                     </div>
                 </div>
                 <div class="class-card">
-                    <div class="class-image" style="background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="class-image"
+                        style="background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                         <div class="class-overlay">
                             <h3>CrossFit</h3>
                             <p>Entrena como un atleta</p>
@@ -149,7 +166,8 @@
                     </div>
                 </div>
                 <div class="class-card">
-                    <div class="class-image" style="background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="class-image"
+                        style="background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                         <div class="class-overlay">
                             <h3>Spinning</h3>
                             <p>Pedalea hacia tus metas</p>
@@ -164,7 +182,8 @@
                     </div>
                 </div>
                 <div class="class-card">
-                    <div class="class-image" style="background-image: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="class-image"
+                        style="background-image: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
                         <div class="class-overlay">
                             <h3>Pilates</h3>
                             <p>Fortalece tu core</p>
@@ -179,7 +198,8 @@
                     </div>
                 </div>
                 <div class="class-card">
-                    <div class="class-image" style="background-image: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                    <div class="class-image"
+                        style="background-image: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
                         <div class="class-overlay">
                             <h3>Zumba</h3>
                             <p>Baila y quema calorías</p>
@@ -194,7 +214,8 @@
                     </div>
                 </div>
                 <div class="class-card">
-                    <div class="class-image" style="background-image: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                    <div class="class-image"
+                        style="background-image: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
                         <div class="class-overlay">
                             <h3>Funcional</h3>
                             <p>Entrena para la vida real</p>
@@ -338,7 +359,8 @@
                     <p>¿Tienes alguna pregunta? Estamos aquí para ayudarte</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
@@ -348,8 +370,11 @@
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
                             </svg>
                             <div>
                                 <h4>Teléfono</h4>
@@ -357,8 +382,10 @@
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                             <div>
@@ -404,14 +431,17 @@
                         </a>
                         <a href="#" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5">
+                                </rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                             </svg>
                         </a>
                         <a href="#" aria-label="Twitter">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
                             </svg>
                         </a>
                     </div>
@@ -450,11 +480,13 @@
 
     <!-- Botón volver arriba -->
     <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
 
     <script src="{{ asset('js/home.js') }}"></script>
 </body>
+
 </html>

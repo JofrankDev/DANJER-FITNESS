@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,8 @@ Route::middleware('auth:web')->group(function () {
     });
     Route::post('/logout', [LoginController::class, 'logout']);
 });
+
+
+//rutas publicas
+
+Route::get('/home/sessions',[SessionController::class, 'getThreeSessions']);

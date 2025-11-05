@@ -18,7 +18,7 @@
                 <p>Transforma tu cuerpo, transforma tu vida</p>
             </div>
         </div>
-        
+
         <div class="auth-right">
             <div class="auth-form-container">
                 <a href="{{ route('home') }}" class="back-link">
@@ -27,7 +27,7 @@
                     </svg>
                     Volver al inicio
                 </a>
-                
+
                 <div class="auth-header">
                     <h2>Crear Cuenta</h2>
                     <p>Únete a la comunidad DANJER FITNESS</p>
@@ -39,37 +39,37 @@
                     </div>
                 @endif
 
-                <form action="#" method="POST" class="auth-form">
+                <form action="{{ route('register.post') }}" method="POST" class="auth-form">
                     @csrf
-                    
+
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="first_name">Nombre</label>
-                            <input 
-                                type="text" 
-                                id="first_name" 
-                                name="first_name" 
-                                placeholder="Juan" 
-                                required 
+                            <label for="name">Nombre</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Juan"
+                                required
                                 autofocus
-                                value="{{ old('first_name') }}"
+                                value="{{ old('name') }}"
                             >
-                            @error('first_name')
+                            @error('name')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="last_name">Apellido</label>
-                            <input 
-                                type="text" 
-                                id="last_name" 
-                                name="last_name" 
-                                placeholder="Pérez" 
+                            <label for="lastname">Apellido</label>
+                            <input
+                                type="text"
+                                id="lastname"
+                                name="lastname"
+                                placeholder="Pérez"
                                 required
-                                value="{{ old('last_name') }}"
+                                value="{{ old('lastname') }}"
                             >
-                            @error('last_name')
+                            @error('lastname')
                                 <span class="error-message">{{ $message }}</span>
                             @enderror
                         </div>
@@ -77,11 +77,11 @@
 
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            placeholder="tu@email.com" 
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="tu@email.com"
                             required
                             value="{{ old('email') }}"
                         >
@@ -91,13 +91,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input 
-                            type="tel" 
-                            id="phone" 
-                            name="phone" 
-                            placeholder="+1 234 567 890" 
-                            required
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+1 234 567 890"
                             value="{{ old('phone') }}"
                         >
                         @error('phone')
@@ -106,13 +105,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="dni">DNI</label>
-                        <input 
-                            type="text" 
-                            id="dni" 
-                            name="dni" 
-                            placeholder="76543218" 
-                            required
+                        <label for="dni">DNI (opcional)</label>
+                        <input
+                            type="text"
+                            id="dni"
+                            name="dni"
+                            placeholder="76543218"
                             value="{{ old('dni') }}"
                         >
                         @error('dni')
@@ -123,11 +121,11 @@
                     <div class="form-group">
                         <label for="password">Contraseña</label>
                         <div class="password-input">
-                            <input 
-                                type="password" 
-                                id="password" 
-                                name="password" 
-                                placeholder="••••••••" 
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="••••••••"
                                 required
                             >
                             <button type="button" class="toggle-password" onclick="togglePassword('password')">
@@ -146,11 +144,11 @@
                     <div class="form-group">
                         <label for="password_confirmation">Confirmar contraseña</label>
                         <div class="password-input">
-                            <input 
-                                type="password" 
-                                id="password_confirmation" 
-                                name="password_confirmation" 
-                                placeholder="••••••••" 
+                            <input
+                                type="password"
+                                id="password_confirmation"
+                                name="password_confirmation"
+                                placeholder="••••••••"
                                 required
                             >
                             <button type="button" class="toggle-password" onclick="togglePassword('password_confirmation')">
@@ -178,7 +176,7 @@
                     </button>
 
                     <p class="auth-footer">
-                        ¿Ya tienes una cuenta? 
+                        ¿Ya tienes una cuenta?
                         <a href="{{ route('login') }}" class="auth-link">Inicia sesión aquí</a>
                     </p>
                 </form>
@@ -195,31 +193,31 @@
             </div>
             <div class="modal-body">
                 <p class="modal-intro">Última actualización: 5 de noviembre de 2025</p>
-                
+
                 <h4>1. Aceptación de los Términos</h4>
                 <p>Al registrarse y utilizar los servicios de DANJER FITNESS, usted acepta estar legalmente vinculado por estos términos y condiciones. Si no está de acuerdo con alguna parte de estos términos, no podrá acceder a nuestros servicios.</p>
-                
+
                 <h4>2. Uso de las Instalaciones</h4>
                 <p>Los miembros se comprometen a utilizar las instalaciones de manera responsable, respetando el equipo, las áreas comunes y a los demás usuarios. Cualquier daño causado por uso indebido será responsabilidad del usuario.</p>
-                
+
                 <h4>3. Membresías y Pagos</h4>
                 <p>Las membresías son personales e intransferibles. Los pagos deben realizarse en las fechas establecidas. La falta de pago puede resultar en la suspensión temporal del servicio. No se realizarán reembolsos por períodos no utilizados, excepto en casos excepcionales evaluados individualmente.</p>
-                
+
                 <h4>4. Salud y Seguridad</h4>
                 <p>Es responsabilidad del usuario informar sobre cualquier condición médica que pueda afectar su capacidad para realizar ejercicio físico. Se recomienda consultar con un médico antes de iniciar cualquier programa de entrenamiento. DANJER FITNESS no se hace responsable por lesiones resultantes del uso inadecuado del equipo o negligencia del usuario.</p>
-                
+
                 <h4>5. Conducta y Comportamiento</h4>
                 <p>Se espera que todos los miembros mantengan un comportamiento respetuoso hacia el personal y otros usuarios. Está prohibido el acoso, discriminación o cualquier conducta que perturbe el ambiente del gimnasio. El incumplimiento puede resultar en la cancelación inmediata de la membresía sin derecho a reembolso.</p>
-                
+
                 <h4>6. Privacidad y Protección de Datos</h4>
                 <p>La información personal proporcionada será tratada de acuerdo con nuestra política de privacidad. Nos comprometemos a proteger sus datos y no compartirlos con terceros sin su consentimiento expreso, excepto cuando sea requerido por ley.</p>
-                
+
                 <h4>7. Cancelación y Suspensión</h4>
                 <p>Los usuarios pueden cancelar su membresía con un aviso previo de 30 días. DANJER FITNESS se reserva el derecho de suspender o cancelar membresías en caso de incumplimiento de estos términos o comportamiento inapropiado.</p>
-                
+
                 <h4>8. Modificaciones</h4>
                 <p>DANJER FITNESS se reserva el derecho de modificar estos términos y condiciones en cualquier momento. Los cambios serán comunicados a través de nuestros canales oficiales y entrarán en vigor inmediatamente después de su publicación.</p>
-                
+
                 <h4>9. Contacto</h4>
                 <p>Para cualquier consulta sobre estos términos y condiciones, puede contactarnos a través de nuestros canales de atención al cliente o en nuestras instalaciones.</p>
             </div>

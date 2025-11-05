@@ -79,7 +79,7 @@ class LoginController extends Controller
             ], 200);
         }
 
-        return redirect()->intended(route('dashboard'))
+        return redirect()->intended(route('home'))
             ->with('success', '¡Bienvenido de nuevo!');
     }
 

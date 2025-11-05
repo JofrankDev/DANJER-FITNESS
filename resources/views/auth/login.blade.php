@@ -18,7 +18,7 @@
                 <p>Transforma tu cuerpo, transforma tu vida</p>
             </div>
         </div>
-        
+
         <div class="auth-right">
             <div class="auth-form-container">
                 <a href="{{ route('home') }}" class="back-link">
@@ -27,7 +27,7 @@
                     </svg>
                     Volver al inicio
                 </a>
-                
+
                 <div class="auth-header">
                     <h2>Iniciar Sesión</h2>
                     <p>Bienvenido de nuevo a DANJER FITNESS</p>
@@ -39,17 +39,17 @@
                     </div>
                 @endif
 
-                <form action="#" method="POST" class="auth-form">
+                <form action="{{ route('login.post') }}" method="POST" class="auth-form">
                     @csrf
-                    
+
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            placeholder="tu@email.com" 
-                            required 
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="tu@email.com"
+                            required
                             autofocus
                             value="{{ old('email') }}"
                         >
@@ -61,11 +61,11 @@
                     <div class="form-group">
                         <label for="password">Contraseña</label>
                         <div class="password-input">
-                            <input 
-                                type="password" 
-                                id="password" 
-                                name="password" 
-                                placeholder="••••••••" 
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="••••••••"
                                 required
                             >
                             <button type="button" class="toggle-password" onclick="togglePassword()">
@@ -82,7 +82,7 @@
 
                     <div class="form-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" name="remember" id="remember">
+                            <input type="checkbox" name="remember" id="remember" value="1">
                             <span class="checkmark"></span>
                             Recuérdame
                         </label>
@@ -94,7 +94,7 @@
                     </button>
 
                     <p class="auth-footer">
-                        ¿No tienes una cuenta? 
+                        ¿No tienes una cuenta?
                         <a href="{{ route('register') }}" class="auth-link">Regístrate aquí</a>
                     </p>
                 </form>

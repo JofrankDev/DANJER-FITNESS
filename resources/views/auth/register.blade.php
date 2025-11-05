@@ -106,6 +106,21 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="dni">DNI</label>
+                        <input 
+                            type="text" 
+                            id="dni" 
+                            name="dni" 
+                            placeholder="76543218" 
+                            required
+                            value="{{ old('dni') }}"
+                        >
+                        @error('dni')
+                            <span class="error-message">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label for="password">Contraseña</label>
                         <div class="password-input">
                             <input 

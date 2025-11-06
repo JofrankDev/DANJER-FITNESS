@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('client_sessions', function (Blueprint $table) { //tabla reserva
             $table->id();
-            $table->boolean('status')->default(1);
+            $table->boolean('attendance')->default(1);
             $table->foreignId('client_id')->constrained()->onDelete('cascade');
             $table->foreignId('session_id')->constrained()->onDelete('cascade');
             $table->timestamps();

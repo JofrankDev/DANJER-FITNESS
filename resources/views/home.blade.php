@@ -33,7 +33,7 @@
                         <a href="{{ route('register') }}" class="btn btn-primary">Registrarse</a>
                     @else
                         <a href="#" class="btn btn-primary">Mi Cuenta</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary">
                                 Cerrar Sesión
@@ -102,8 +102,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
@@ -181,54 +181,26 @@
                         <button class="btn btn-small">Reservar Clase</button>
                     </div>
                 </div>
-                <div class="class-card">
-                    <div class="class-image"
-                        style="background-image: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <div class="class-overlay">
-                            <h3>Pilates</h3>
-                            <p>Fortalece tu core</p>
-                        </div>
-                    </div>
-                    <div class="class-info">
-                        <div class="class-details">
-                            <span class="class-duration">⏱ 55 min</span>
-                            <span class="class-level">📊 Principiante</span>
-                        </div>
-                        <button class="btn btn-small">Reservar Clase</button>
-                    </div>
-                </div>
-                <div class="class-card">
-                    <div class="class-image"
-                        style="background-image: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-                        <div class="class-overlay">
-                            <h3>Zumba</h3>
-                            <p>Baila y quema calorías</p>
-                        </div>
-                    </div>
-                    <div class="class-info">
-                        <div class="class-details">
-                            <span class="class-duration">⏱ 60 min</span>
-                            <span class="class-level">📊 Todos los niveles</span>
-                        </div>
-                        <button class="btn btn-small">Reservar Clase</button>
-                    </div>
-                </div>
-                <div class="class-card">
-                    <div class="class-image"
-                        style="background-image: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                        <div class="class-overlay">
-                            <h3>Funcional</h3>
-                            <p>Entrena para la vida real</p>
-                        </div>
-                    </div>
-                    <div class="class-info">
-                        <div class="class-details">
-                            <span class="class-duration">⏱ 50 min</span>
-                            <span class="class-level">📊 Avanzado</span>
-                        </div>
-                        <button class="btn btn-small">Reservar Clase</button>
-                    </div>
-                </div>
+            </div>
+            <div class="text-center mt-4">
+                @auth
+                    <a href="#clases-completas" class="btn btn-primary btn-ver-mas">
+                        Ver Todas Las Clases
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; vertical-align: middle;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-primary btn-ver-mas">
+                        Ver Todas Las Clases
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; vertical-align: middle;">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                            <polyline points="10 17 15 12 10 7"></polyline>
+                            <line x1="15" y1="12" x2="3" y2="12"></line>
+                        </svg>
+                    </a>
+                @endauth
             </div>
         </div>
     </section>

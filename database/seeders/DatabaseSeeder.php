@@ -25,9 +25,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        
+
         $plans = Plan::factory(4)->create();
-        $classTypes = ClassType::factory(5)->create();
         $rooms = Room::factory(3)->create();
 
         //
@@ -35,7 +34,7 @@ class DatabaseSeeder extends Seeder
         $trainerUsers = User::factory(5)->create();
         $clientUsers = User::factory(15)->create();
 
-        
+
         $adminUsers->each(fn($user) => Administrator::factory()->create([
             'user_id' => $user->id,
         ]));
@@ -49,23 +48,18 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id,
         ]));
 
-        // 
-        $sessions = collect();
-        foreach ($trainers as $trainer) {
-            $trainerSessions = Session::factory(rand(2, 4))->create([
-                'trainer_id' => $trainer->id,
-                'room_id' => $rooms->random()->id,
-                'class_type_id' => $classTypes->random()->id,
-            ]);
-            $sessions = $sessions->merge($trainerSessions);
-        }
+        // Crear sesiones reales con el SessionSeeder
+        $this->call(SessionSeeder::class);
+
+        // Obtener todas las sesiones creadas
+        $sessions = Session::all();
 
         // inscripn de clientes a sesiones
         $sessions->each(function ($session) use ($clients) {
             $randomClients = $clients->random(rand(3, 7));
             $randomClients->each(function ($client) use ($session) {
                 $session->clients()->attach($client->id, [
-                    'status' => fake()->randomElement([0,1]),
+                    'attendance' => fake()->randomElement([0,1]),
                 ]);
             });
         });
@@ -80,7 +74,7 @@ class DatabaseSeeder extends Seeder
             $memberships = $memberships->merge($clientMemberships);
         }
 
-        // pagos  
+        // pagos
         $memberships->each(function ($membership) {
             Payment::factory(rand(1, 3))->create([
                 'membership_id' => $membership->id,

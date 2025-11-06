@@ -525,81 +525,164 @@ body {
 /* ===================================
    HORARIOS
    =================================== */
-.schedule {
+/* ===================================
+   SOBRE NOSOTROS
+   =================================== */
+.about-us {
     padding: 80px 0;
     background: var(--light-color);
 }
 
-.schedule-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start;
 }
 
-.tab-button {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--primary-color);
-    background: transparent;
-    color: var(--primary-color);
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.tab-button.active,
-.tab-button:hover {
-    background: var(--primary-color);
-    color: var(--white);
-}
-
-.schedule-content {
+.about-text {
     background: var(--white);
+    padding: 2.5rem;
     border-radius: 15px;
-    padding: 2rem;
     box-shadow: var(--shadow-md);
 }
 
-.schedule-list {
-    display: none;
-}
-
-.schedule-list.active {
-    display: block;
-}
-
-.schedule-item {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-bottom: 1px solid #eee;
-    align-items: center;
-}
-
-.schedule-item:last-child {
-    border-bottom: none;
-}
-
-.schedule-time {
-    font-weight: 600;
+.about-text h3 {
     color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
-.schedule-class {
+.about-text p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), #E91E8C);
+    border-radius: 50%;
+}
+
+.stat-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--white);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.about-values {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.about-values h3 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.value-item {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.value-item:hover {
+    background: var(--light-color);
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), #E91E8C);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.value-item:hover .value-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(199, 21, 133, 0.3);
+}
+
+.value-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--white);
+}
+
+.value-item h4 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--dark-color);
 }
 
-.schedule-trainer {
+.value-item p {
     color: #666;
-}
-
-.schedule-room {
-    color: #666;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* ===================================
@@ -953,14 +1036,18 @@ body {
         font-size: 1.1rem;
     }
 
-    .schedule-item {
+    .about-content {
         grid-template-columns: 1fr;
-        gap: 0.5rem;
+        gap: 2rem;
     }
 
-    .schedule-time,
-    .schedule-class {
-        font-size: 1rem;
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .contact-wrapper {
@@ -988,6 +1075,34 @@ body {
     .classes-grid,
     .pricing-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about-text,
+    .about-values {
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .value-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .value-icon svg {
+        width: 30px;
+        height: 30px;
     }
 
     .newsletter-form {

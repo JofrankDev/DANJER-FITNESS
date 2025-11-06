@@ -33,11 +33,7 @@
                         <a href="{{ route('register') }}" class="btn btn-primary">Registrarse</a>
                     @else
                         <a href="#" class="btn btn-primary">Mi Cuenta</a>
-<<<<<<< HEAD
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
-=======
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
->>>>>>> 739cf40 (Modificiacion del login y register(funcionando))
                             @csrf
                             <button type="submit" class="btn btn-primary">
                                 Cerrar Sesión
@@ -106,13 +102,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-<<<<<<< HEAD
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
-=======
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
->>>>>>> 739cf40 (Modificiacion del login y register(funcionando))
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>

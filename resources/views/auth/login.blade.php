@@ -18,10 +18,6 @@
                 <p>Transforma tu cuerpo, transforma tu vida</p>
             </div>
         </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 739cf40 (Modificiacion del login y register(funcionando))
         <div class="auth-right">
             <div class="auth-form-container">
                 <a href="{{ route('home') }}" class="back-link">
@@ -30,10 +26,6 @@
                     </svg>
                     Volver al inicio
                 </a>
-<<<<<<< HEAD
-=======
-
->>>>>>> 739cf40 (Modificiacion del login y register(funcionando))
                 <div class="auth-header">
                     <h2>Iniciar Sesión</h2>
                     <p>Bienvenido de nuevo a DANJER FITNESS</p>

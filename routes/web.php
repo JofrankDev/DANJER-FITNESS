@@ -34,7 +34,7 @@ Route::middleware('guest')->group(function () {
 // Rutas protegidas (requieren autenticación)
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('dashboard.index');
     })->name('dashboard');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

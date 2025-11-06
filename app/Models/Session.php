@@ -26,13 +26,20 @@ class Session extends Model
         'status',
     ];
 
+    protected $casts = [
+        'date' => 'date',
+        'start_datetime' => 'datetime:H:i',
+    ];
+
     public function trainer() : BelongsTo
     {
         return $this->belongsTo(Trainer::class);
     }
     public function clients() : BelongsToMany
     {
-        return $this->belongsToMany(Client::class, 'client_sessions', 'session_id', 'client_id')->withPivot('status')->withTimestamps();
+        return $this->belongsToMany(Client::class, 'client_sessions', 'session_id', 'client_id')
+            ->withPivot('status', 'attendance', 'reserved_at', 'cancelled_at')
+            ->withTimestamps();
     }
 
     public function room() : BelongsTo
@@ -43,6 +50,19 @@ class Session extends Model
     public function classType() : BelongsTo
     {
         return $this->belongsTo(ClassType::class);
+    }
+
+    // Accessor para obtener la hora de finalización
+    public function getEndTimeAttribute()
+    {
+        $start = \Carbon\Carbon::parse($this->start_datetime);
+        return $start->addMinutes($this->duration_minutes)->format('H:i');
+    }
+
+    // Accessor para obtener el día de la semana traducido
+    public function getDayNameAttribute()
+    {
+        return $this->date->translatedFormat('l');
     }
 
 }

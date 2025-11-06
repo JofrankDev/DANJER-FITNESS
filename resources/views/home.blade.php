@@ -23,7 +23,7 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#inicio" class="nav-link active">Inicio</a></li>
                     <li><a href="#clases" class="nav-link">Clases</a></li>
-                    <li><a href="#horarios" class="nav-link">Horarios</a></li>
+                    <li><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
                     <li><a href="#planes" class="nav-link">Planes</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
@@ -205,50 +205,114 @@
         </div>
     </section>
 
-    <!-- Horarios -->
-    <section class="schedule" id="horarios">
+    <!-- Sobre Nosotros -->
+    <section class="about-us" id="sobre-nosotros">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Horarios de Clases</h2>
-                <p class="section-subtitle">Encuentra el horario perfecto para ti</p>
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p class="section-subtitle">Conoce nuestra historia y lo que nos hace únicos</p>
             </div>
-            <div class="schedule-tabs">
-                <button class="tab-button active" data-day="lunes">Lunes</button>
-                <button class="tab-button" data-day="martes">Martes</button>
-                <button class="tab-button" data-day="miercoles">Miércoles</button>
-                <button class="tab-button" data-day="jueves">Jueves</button>
-                <button class="tab-button" data-day="viernes">Viernes</button>
-                <button class="tab-button" data-day="sabado">Sábado</button>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nuestra Historia</h3>
+                    <p>
+                        Desde 2020, DANJER FITNESS ha sido más que un gimnasio: somos una comunidad comprometida
+                        con la transformación física y mental de nuestros miembros. Nacimos con la visión de crear
+                        un espacio donde cada persona, sin importar su nivel de condición física, pudiera encontrar
+                        el apoyo y la motivación necesaria para alcanzar sus objetivos.
+                    </p>
+                    <p>
+                        Con más de 5 años de experiencia, hemos ayudado a miles de personas a transformar sus vidas
+                        a través del fitness. Nuestro equipo de entrenadores certificados y nutricionistas profesionales
+                        trabajan juntos para ofrecerte un enfoque integral hacia la salud y el bienestar.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Miembros Activos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Clases Semanales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <div class="stat-number">4.9/5</div>
+                        <div class="stat-label">Valoración</div>
+                    </div>
+                </div>
             </div>
-            <div class="schedule-content">
-                <div class="schedule-list active" id="lunes">
-                    <div class="schedule-item">
-                        <span class="schedule-time">07:00 - 08:00</span>
-                        <span class="schedule-class">Yoga</span>
-                        <span class="schedule-trainer">María González</span>
-                        <span class="schedule-room">Sala 1</span>
-                        <button class="btn btn-small">Reservar</button>
+            <div class="about-values">
+                <h3>Nuestros Valores</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h4>Compromiso</h4>
+                        <p>Dedicados al éxito de cada miembro</p>
                     </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">09:00 - 09:45</span>
-                        <span class="schedule-class">CrossFit</span>
-                        <span class="schedule-trainer">Carlos Ruiz</span>
-                        <span class="schedule-room">Sala 2</span>
-                        <button class="btn btn-small">Reservar</button>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h4>Comunidad</h4>
+                        <p>Creamos un ambiente de apoyo mutuo</p>
                     </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">18:00 - 18:50</span>
-                        <span class="schedule-class">Spinning</span>
-                        <span class="schedule-trainer">Ana Martínez</span>
-                        <span class="schedule-room">Sala 3</span>
-                        <button class="btn btn-small">Reservar</button>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path>
+                            </svg>
+                        </div>
+                        <h4>Excelencia</h4>
+                        <p>Equipamiento de primera y personal calificado</p>
                     </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">19:00 - 20:00</span>
-                        <span class="schedule-class">Zumba</span>
-                        <span class="schedule-trainer">Laura Pérez</span>
-                        <span class="schedule-room">Sala 1</span>
-                        <button class="btn btn-small">Reservar</button>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </div>
+                        <h4>Bienestar</h4>
+                        <p>Enfoque integral en salud física y mental</p>
                     </div>
                 </div>
             </div>

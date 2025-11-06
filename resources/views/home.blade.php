@@ -32,7 +32,7 @@
                         <a href="{{ route('login') }}" class="btn btn-outline">Iniciar Sesión</a>
                         <a href="{{ route('register') }}" class="btn btn-primary">Registrarse</a>
                     @else
-                        <a href="#" class="btn btn-primary">Mi Cuenta</a>
+                        <a href="{{ route('dashboard') }}" class="btn btn-primary">Mi Cuenta</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary">
@@ -60,7 +60,11 @@
                 <p class="hero-subtitle animate-fade-in-delay">Únete a la mejor comunidad fitness y alcanza tus
                     objetivos con entrenadores certificados</p>
                 <div class="hero-buttons animate-fade-in-delay-2">
-                    <a href="#planes" class="btn btn-hero">Comienza Ahora</a>
+                    @auth
+                        <a href="{{ route('dashboard') }}" class="btn btn-hero">Ir al Dashboard</a>
+                    @else
+                        <a href="{{ route('register') }}" class="btn btn-hero">Comienza Ahora</a>
+                    @endauth
                     <a href="#clases" class="btn btn-outline-white">Ver Clases</a>
                 </div>
             </div>

@@ -18,7 +18,6 @@
                 <p>Transforma tu cuerpo, transforma tu vida</p>
             </div>
         </div>
-
         <div class="auth-right">
             <div class="auth-form-container">
                 <a href="{{ route('home') }}" class="back-link">
@@ -27,7 +26,6 @@
                     </svg>
                     Volver al inicio
                 </a>
-
                 <div class="auth-header">
                     <h2>Crear Cuenta</h2>
                     <p>Únete a la comunidad DANJER FITNESS</p>

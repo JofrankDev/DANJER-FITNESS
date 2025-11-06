@@ -182,6 +182,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e90db0f (Se agregaron los T&C)
 
 // ============================================
 // FUNCIONALIDAD DEL MODAL DE TÉRMINOS Y CONDICIONES
@@ -251,3 +255,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+<<<<<<< HEAD
+=======
+>>>>>>> 1d17bad (Se añadió las vistas de inicio de sesión y registro)
+=======
+>>>>>>> e90db0f (Se agregaron los T&C)

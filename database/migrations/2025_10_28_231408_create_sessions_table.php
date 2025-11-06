@@ -27,7 +27,7 @@ return new class extends Migration
 
             $table->string('name',25);
             $table->string('description',255);
-            $table->unsignedInteger('capacity');
+            $table->string('name', 25);
             $table->date('date');
             $table->enum('status', ['scheduled', 'in_progress', 'completed', 'cancelled'])->default('scheduled');
             $table->string('description', 300);

@@ -58,7 +58,7 @@
             <div class="hero-content">
                 <h1 class="hero-title animate-fade-in">Transforma Tu Cuerpo<br><span>Transforma Tu Vida</span></h1>
                 <p class="hero-subtitle animate-fade-in-delay">Únete a la mejor comunidad fitness y alcanza tus
-                    objetivos con entrenadores certificados</p>
+                    objetivos con nuestra entrenadora certificada</p>
                 <div class="hero-buttons animate-fade-in-delay-2">
                     @auth
                         <a href="{{ route('dashboard') }}" class="btn btn-hero">Ir al Dashboard</a>
@@ -88,8 +88,8 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                     </div>
-                    <h3>Entrenadores Certificados</h3>
-                    <p>Profesionales especializados para guiarte en tu progreso</p>
+                    <h3>Entrenadora Certificada</h3>
+                    <p>Comprometida en guiarte en cada paso de tu progreso</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -123,7 +123,7 @@
                         </svg>
                     </div>
                     <h3>Variedad de Clases</h3>
-                    <p>Yoga, CrossFit, Spinning, Pilates y mucho más</p>
+                    <p>Aeróbicos, Fitness de Combate, HIIT, Funcional, Musculación y mucho más</p>
                 </div>
             </div>
         </div>
@@ -141,13 +141,13 @@
                     <div class="class-image"
                         style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         <div class="class-overlay">
-                            <h3>Yoga</h3>
-                            <p>Equilibra cuerpo y mente</p>
+                            <h3>Aeróbicos</h3>
+                            <p>Activa tu energía y mejora tu resistencia</p>
                         </div>
                     </div>
                     <div class="class-info">
                         <div class="class-details">
-                            <span class="class-duration">⏱ 60 min</span>
+                            <span class="class-duration">⏱ 45 min</span>
                             <span class="class-level">📊 Todos los niveles</span>
                         </div>
                         <button class="btn btn-small">Reservar Clase</button>
@@ -157,8 +157,8 @@
                     <div class="class-image"
                         style="background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                         <div class="class-overlay">
-                            <h3>CrossFit</h3>
-                            <p>Entrena como un atleta</p>
+                            <h3>Fitness de Combate</h3>
+                            <p>Descarga energía con movimientos potentes</p>
                         </div>
                     </div>
                     <div class="class-info">
@@ -173,14 +173,46 @@
                     <div class="class-image"
                         style="background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                         <div class="class-overlay">
-                            <h3>Spinning</h3>
-                            <p>Pedalea hacia tus metas</p>
+                            <h3>HIIT</h3>
+                            <p>Entrena al máximo en intervalos cortos</p>
                         </div>
                     </div>
                     <div class="class-info">
                         <div class="class-details">
-                            <span class="class-duration">⏱ 50 min</span>
+                            <span class="class-duration">⏱ 45 min</span>
+                            <span class="class-level">📊 Avanzado</span>
+                        </div>
+                        <button class="btn btn-small">Reservar Clase</button>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-image"
+                        style="background-image: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <div class="class-overlay">
+                            <h3>Funcional</h3>
+                            <p>Mejora tu fuerza y movilidad con tu propio cuerpo</p>
+                        </div>
+                    </div>
+                    <div class="class-info">
+                        <div class="class-details">
+                            <span class="class-duration">⏱ 45 min</span>
                             <span class="class-level">📊 Todos los niveles</span>
+                        </div>
+                        <button class="btn btn-small">Reservar Clase</button>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-image"
+                        style="background-image: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        <div class="class-overlay">
+                            <h3>Musculación</h3>
+                            <p>Desarrolla fuerza y tonifica tu cuerpo</p>
+                        </div>
+                    </div>
+                    <div class="class-info">
+                        <div class="class-details">
+                            <span class="class-duration">⏱ 45 min</span>
+                            <span class="class-level">📊 Intermedio</span>
                         </div>
                         <button class="btn btn-small">Reservar Clase</button>
                     </div>
@@ -220,15 +252,16 @@
                 <div class="about-text">
                     <h3>Nuestra Historia</h3>
                     <p>
-                        Desde 2020, DANJER FITNESS ha sido más que un gimnasio: somos una comunidad comprometida
+                        Desde 2022, DANJER FITNESS ha sido más que un gimnasio: somos una comunidad comprometida
                         con la transformación física y mental de nuestros miembros. Nacimos con la visión de crear
                         un espacio donde cada persona, sin importar su nivel de condición física, pudiera encontrar
                         el apoyo y la motivación necesaria para alcanzar sus objetivos.
                     </p>
                     <p>
-                        Con más de 5 años de experiencia, hemos ayudado a miles de personas a transformar sus vidas
-                        a través del fitness. Nuestro equipo de entrenadores certificados y nutricionistas profesionales
-                        trabajan juntos para ofrecerte un enfoque integral hacia la salud y el bienestar.
+                        Con más de 3 años de experiencia, hemos ayudado a miles de personas a transformar sus vidas a 
+                        través del deporte. Nuestra fundadora y entrenadora principal trabaja con dedicación para 
+                        ofrecerte un enfoque integral hacia la salud y el bienestar, combinando conocimiento, 
+                        motivación y pasión en cada entrenamiento.
                     </p>
                 </div>
                 <div class="about-stats">
@@ -241,7 +274,7 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
                         </div>
-                        <div class="stat-number">5000+</div>
+                        <div class="stat-number">15+</div>
                         <div class="stat-label">Miembros Activos</div>
                     </div>
                     <div class="stat-card">
@@ -251,7 +284,7 @@
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
                         </div>
-                        <div class="stat-number">50+</div>
+                        <div class="stat-number">10+</div>
                         <div class="stat-label">Clases Semanales</div>
                     </div>
                     <div class="stat-card">
@@ -260,7 +293,7 @@
                                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                             </svg>
                         </div>
-                        <div class="stat-number">15</div>
+                        <div class="stat-number">3</div>
                         <div class="stat-label">Años de Experiencia</div>
                     </div>
                     <div class="stat-card">
@@ -406,7 +439,7 @@
                             </svg>
                             <div>
                                 <h4>Dirección</h4>
-                                <p>Av. Principal 123, Ciudad, País</p>
+                                <p>Av. Francisco Luna Pizarro 108-A, San Martín de Porres, Lima</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -418,7 +451,7 @@
                             </svg>
                             <div>
                                 <h4>Teléfono</h4>
-                                <p>+1 234 567 890</p>
+                                <p>+51 987 654 321</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -462,7 +495,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>DANJER <span>FITNESS</span></h3>
-                    <p>Transformando vidas a través del fitness desde 2020</p>
+                    <p>Transformando vidas a través del fitness desde 2022</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

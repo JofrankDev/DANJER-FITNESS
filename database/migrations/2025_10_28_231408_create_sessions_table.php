@@ -25,10 +25,12 @@ return new class extends Migration
 
             //fields
 
-            $table->string('name',25);
-            $table->string('description',300);
-            $table->unsignedInteger('capacity');
+            $table->string('name', 25);
             $table->date('date');
+            $table->enum('status', ['scheduled', 'in_progress', 'completed', 'cancelled'])->default('scheduled');
+            $table->string('description', 300);
+            $table->unsignedInteger('capacity');
+
             $table->time('start_datetime');
             $table->unsignedInteger('duration_minutes');
             $table->timestamps();

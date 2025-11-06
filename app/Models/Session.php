@@ -23,6 +23,7 @@ class Session extends Model
         'date',
         'start_datetime',
         'duration_minutes',
+        'status',
     ];
 
     public function trainer() : BelongsTo

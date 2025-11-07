@@ -79,7 +79,24 @@ class LoginController extends Controller
             ], 200);
         }
 
-        return redirect()->intended(route('dashboard'))
+        // Redirigir según el tipo de usuario
+        $user = Auth::user();
+
+        if ($user->trainer) {
+            return redirect()->route('trainer.dashboard')
+                ->with('success', '¡Bienvenido de nuevo, ' . $user->name . '!');
+        }
+
+        if ($user->administrator) {
+            // Cuando tengas dashboard de admin, descomenta esta línea:
+            // return redirect()->route('admin.dashboard')
+            //     ->with('success', '¡Bienvenido de nuevo, Administrador!');
+            return redirect()->route('dashboard')
+                ->with('success', '¡Bienvenido de nuevo, Administrador!');
+        }
+
+        // Por defecto, redirigir al dashboard de cliente
+        return redirect()->route('dashboard')
             ->with('success', '¡Bienvenido de nuevo!');
     }
 

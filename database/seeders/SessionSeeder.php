@@ -29,36 +29,24 @@ class SessionSeeder extends Seeder
     {
         $classTypes = [
             [
-                'name' => 'Yoga',
-                'description' => 'Clase de yoga para todos los niveles, enfocada en flexibilidad, equilibrio y relajación.'
+                'name' => 'Aeróbicos',
+                'description' => 'Ejercicios cardiovasculares con música energizante para mejorar resistencia y quemar calorías.'
             ],
             [
-                'name' => 'CrossFit',
-                'description' => 'Entrenamiento funcional de alta intensidad que combina gimnasia, levantamiento de pesas y ejercicio cardiovascular.'
-            ],
-            [
-                'name' => 'Spinning',
-                'description' => 'Clase de ciclismo indoor con música motivadora para mejorar resistencia cardiovascular.'
-            ],
-            [
-                'name' => 'Pilates',
-                'description' => 'Método de ejercicio que mejora la flexibilidad, fortaleza muscular y postura corporal.'
-            ],
-            [
-                'name' => 'Zumba',
-                'description' => 'Clase de baile fitness con ritmos latinos que combina cardio y tonificación muscular.'
+                'name' => 'Fitness de Combate',
+                'description' => 'Combinación de técnicas de artes marciales y boxeo para un entrenamiento completo de cardio y fuerza.'
             ],
             [
                 'name' => 'HIIT',
                 'description' => 'Entrenamiento de intervalos de alta intensidad para quemar grasa y mejorar la resistencia.'
             ],
             [
-                'name' => 'Boxing',
-                'description' => 'Clase de boxeo para mejorar coordinación, fuerza y resistencia cardiovascular.'
+                'name' => 'Funcional',
+                'description' => 'Entrenamiento funcional que mejora movimientos cotidianos, equilibrio y coordinación.'
             ],
             [
-                'name' => 'Stretching',
-                'description' => 'Clase de estiramientos para mejorar la flexibilidad y prevenir lesiones.'
+                'name' => 'Musculación',
+                'description' => 'Entrenamiento con pesas y máquinas para desarrollar fuerza y masa muscular.'
             ],
         ];
 
@@ -90,33 +78,33 @@ class SessionSeeder extends Seeder
         $sessions = [
             // Lunes
             [
-                'class_type' => 'Yoga',
-                'name' => 'Yoga Matutino',
-                'description' => 'Comienza tu semana con energía. Clase de yoga suave para despertar el cuerpo.',
+                'class_type' => 'Aeróbicos',
+                'name' => 'Aeróbicos Matutino',
+                'description' => 'Comienza tu semana con energía. Cardio intenso con música motivadora.',
                 'day' => 'monday',
                 'start_time' => '07:00',
                 'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'CrossFit',
-                'name' => 'CrossFit Intenso',
-                'description' => 'Entrenamiento funcional de alta intensidad. ¡Supera tus límites!',
+                'class_type' => 'Musculación',
+                'name' => 'Musculación Básica',
+                'description' => 'Entrenamiento con pesas para principiantes e intermedios.',
                 'day' => 'monday',
                 'start_time' => '09:00',
+                'duration_minutes' => 60,
+            ],
+            [
+                'class_type' => 'HIIT',
+                'name' => 'HIIT Power',
+                'description' => 'Intervalos de alta intensidad. ¡Supera tus límites!',
+                'day' => 'monday',
+                'start_time' => '18:00',
                 'duration_minutes' => 45,
             ],
             [
-                'class_type' => 'Pilates',
-                'name' => 'Pilates Core',
-                'description' => 'Fortalece tu centro y mejora tu postura con ejercicios de pilates.',
-                'day' => 'monday',
-                'start_time' => '18:00',
-                'duration_minutes' => 50,
-            ],
-            [
-                'class_type' => 'Zumba',
-                'name' => 'Zumba Fitness',
-                'description' => 'Baila y quema calorías con los mejores ritmos latinos.',
+                'class_type' => 'Fitness de Combate',
+                'name' => 'Combate Nocturno',
+                'description' => 'Libera estrés con técnicas de boxeo y artes marciales.',
                 'day' => 'monday',
                 'start_time' => '19:00',
                 'duration_minutes' => 60,
@@ -124,67 +112,67 @@ class SessionSeeder extends Seeder
 
             // Martes
             [
-                'class_type' => 'Spinning',
-                'name' => 'Spinning Power',
-                'description' => 'Pedalea hacia tus metas con esta intensa clase de spinning.',
+                'class_type' => 'Funcional',
+                'name' => 'Funcional Matutino',
+                'description' => 'Mejora tu rendimiento diario con ejercicios funcionales.',
                 'day' => 'tuesday',
                 'start_time' => '07:00',
-                'duration_minutes' => 50,
+                'duration_minutes' => 60,
             ],
             [
                 'class_type' => 'HIIT',
                 'name' => 'HIIT Extreme',
-                'description' => 'Intervalos de alta intensidad para máxima quema de grasa.',
+                'description' => 'Máxima quema de calorías en mínimo tiempo.',
                 'day' => 'tuesday',
                 'start_time' => '09:00',
                 'duration_minutes' => 45,
             ],
             [
-                'class_type' => 'Yoga',
-                'name' => 'Yoga Flow',
-                'description' => 'Clase dinámica de yoga con secuencias fluidas.',
+                'class_type' => 'Aeróbicos',
+                'name' => 'Aeróbicos Fitness',
+                'description' => 'Cardio dinámico con coreografías divertidas.',
                 'day' => 'tuesday',
                 'start_time' => '18:30',
                 'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'Boxing',
-                'name' => 'Boxing Cardio',
-                'description' => 'Combina técnicas de boxeo con cardio para un entrenamiento completo.',
+                'class_type' => 'Musculación',
+                'name' => 'Musculación Avanzada',
+                'description' => 'Entrenamiento intenso para desarrollo muscular.',
                 'day' => 'tuesday',
                 'start_time' => '20:00',
-                'duration_minutes' => 50,
+                'duration_minutes' => 60,
             ],
 
             // Miércoles
             [
-                'class_type' => 'Yoga',
-                'name' => 'Yoga Restaurativo',
-                'description' => 'Clase relajante para liberar tensión y estrés.',
+                'class_type' => 'Fitness de Combate',
+                'name' => 'Combate Cardio',
+                'description' => 'Combina técnicas de combate con cardio intenso.',
                 'day' => 'wednesday',
                 'start_time' => '07:00',
                 'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'CrossFit',
-                'name' => 'CrossFit Funcional',
-                'description' => 'Entrenamiento funcional para mejorar tu rendimiento diario.',
+                'class_type' => 'Funcional',
+                'name' => 'Funcional Total',
+                'description' => 'Entrenamiento completo para todo el cuerpo.',
                 'day' => 'wednesday',
                 'start_time' => '09:00',
                 'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'Stretching',
-                'name' => 'Stretching & Mobility',
-                'description' => 'Mejora tu flexibilidad y movilidad con estiramientos guiados.',
+                'class_type' => 'HIIT',
+                'name' => 'HIIT Circuit',
+                'description' => 'Circuito de alta intensidad con ejercicios variados.',
                 'day' => 'wednesday',
                 'start_time' => '18:00',
                 'duration_minutes' => 45,
             ],
             [
-                'class_type' => 'Zumba',
-                'name' => 'Zumba Party',
-                'description' => 'Fiesta fitness con los ritmos más movidos. ¡Diversión garantizada!',
+                'class_type' => 'Aeróbicos',
+                'name' => 'Aeróbicos Dance',
+                'description' => 'Baila y quema calorías con los mejores ritmos.',
                 'day' => 'wednesday',
                 'start_time' => '19:00',
                 'duration_minutes' => 60,
@@ -192,17 +180,17 @@ class SessionSeeder extends Seeder
 
             // Jueves
             [
-                'class_type' => 'Spinning',
-                'name' => 'Spinning Resistance',
-                'description' => 'Aumenta tu resistencia cardiovascular con esta clase de spinning.',
+                'class_type' => 'Musculación',
+                'name' => 'Musculación Fuerza',
+                'description' => 'Enfócate en ganar fuerza con ejercicios compuestos.',
                 'day' => 'thursday',
                 'start_time' => '07:00',
-                'duration_minutes' => 50,
+                'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'Pilates',
-                'name' => 'Pilates Mat',
-                'description' => 'Clase de pilates en colchoneta para todo el cuerpo.',
+                'class_type' => 'Funcional',
+                'name' => 'Funcional Fitness',
+                'description' => 'Mejora tu condición física con movimientos funcionales.',
                 'day' => 'thursday',
                 'start_time' => '09:00',
                 'duration_minutes' => 60,
@@ -210,15 +198,15 @@ class SessionSeeder extends Seeder
             [
                 'class_type' => 'HIIT',
                 'name' => 'HIIT Total Body',
-                'description' => 'Entrenamiento de intervalos para trabajar todo el cuerpo.',
+                'description' => 'Trabaja todo tu cuerpo con intervalos intensos.',
                 'day' => 'thursday',
                 'start_time' => '18:30',
-                'duration_minutes' => 60,
+                'duration_minutes' => 45,
             ],
             [
-                'class_type' => 'Boxing',
-                'name' => 'Boxing Técnico',
-                'description' => 'Aprende y perfecciona técnicas de boxeo.',
+                'class_type' => 'Fitness de Combate',
+                'name' => 'Combate Técnico',
+                'description' => 'Aprende y perfecciona técnicas de combate.',
                 'day' => 'thursday',
                 'start_time' => '20:00',
                 'duration_minutes' => 60,
@@ -226,67 +214,67 @@ class SessionSeeder extends Seeder
 
             // Viernes
             [
-                'class_type' => 'Yoga',
-                'name' => 'Yoga Power',
-                'description' => 'Clase dinámica de yoga para desarrollar fuerza y flexibilidad.',
+                'class_type' => 'Aeróbicos',
+                'name' => 'Aeróbicos Power',
+                'description' => 'Termina la semana quemando calorías con energía.',
                 'day' => 'friday',
                 'start_time' => '07:00',
                 'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'CrossFit',
-                'name' => 'CrossFit Weekend Prep',
-                'description' => 'Termina la semana con un entrenamiento intenso y motivador.',
+                'class_type' => 'Musculación',
+                'name' => 'Musculación Full Body',
+                'description' => 'Entrenamiento completo de cuerpo entero.',
                 'day' => 'friday',
                 'start_time' => '09:00',
-                'duration_minutes' => 45,
+                'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'Spinning',
-                'name' => 'Spinning Night',
-                'description' => 'Clase nocturna de spinning con música energizante.',
+                'class_type' => 'Funcional',
+                'name' => 'Funcional Weekend',
+                'description' => 'Prepárate para el fin de semana con un buen entrenamiento.',
                 'day' => 'friday',
                 'start_time' => '19:00',
-                'duration_minutes' => 50,
+                'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'Zumba',
-                'name' => 'Zumba Weekend',
-                'description' => 'Celebra el fin de semana bailando y quemando calorías.',
+                'class_type' => 'HIIT',
+                'name' => 'HIIT Friday',
+                'description' => 'Cierra la semana con máxima intensidad.',
                 'day' => 'friday',
                 'start_time' => '20:00',
-                'duration_minutes' => 60,
+                'duration_minutes' => 45,
             ],
 
             // Sábado
             [
-                'class_type' => 'Yoga',
-                'name' => 'Yoga & Meditación',
-                'description' => 'Clase especial de yoga con meditación guiada.',
+                'class_type' => 'Fitness de Combate',
+                'name' => 'Combate Especial',
+                'description' => 'Clase especial de fin de semana con técnicas avanzadas.',
                 'day' => 'saturday',
                 'start_time' => '08:00',
-                'duration_minutes' => 75,
+                'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'CrossFit',
-                'name' => 'CrossFit WOD Especial',
-                'description' => 'Workout del día con ejercicios variados y desafiantes.',
+                'class_type' => 'Funcional',
+                'name' => 'Funcional Bootcamp',
+                'description' => 'Entrenamiento militar estilo bootcamp.',
                 'day' => 'saturday',
                 'start_time' => '10:00',
                 'duration_minutes' => 60,
             ],
             [
                 'class_type' => 'HIIT',
-                'name' => 'HIIT Bootcamp',
-                'description' => 'Entrenamiento militar de alta intensidad.',
+                'name' => 'HIIT Extreme',
+                'description' => 'La clase más intensa de la semana.',
                 'day' => 'saturday',
                 'start_time' => '11:30',
-                'duration_minutes' => 50,
+                'duration_minutes' => 45,
             ],
             [
-                'class_type' => 'Zumba',
-                'name' => 'Zumba Mega Party',
-                'description' => 'La clase más divertida de la semana. ¡Ven a bailar!',
+                'class_type' => 'Aeróbicos',
+                'name' => 'Aeróbicos Party',
+                'description' => 'Celebra el sábado con música y cardio divertido.',
                 'day' => 'saturday',
                 'start_time' => '17:00',
                 'duration_minutes' => 60,
@@ -294,28 +282,28 @@ class SessionSeeder extends Seeder
 
             // Domingo
             [
-                'class_type' => 'Yoga',
-                'name' => 'Yoga Relax Dominical',
-                'description' => 'Relájate y recarga energías para la semana que viene.',
+                'class_type' => 'Funcional',
+                'name' => 'Funcional Recovery',
+                'description' => 'Entrenamiento suave de recuperación.',
                 'day' => 'sunday',
                 'start_time' => '09:00',
                 'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'Stretching',
-                'name' => 'Stretching Recovery',
-                'description' => 'Estiramientos suaves para recuperación muscular.',
+                'class_type' => 'Musculación',
+                'name' => 'Musculación Ligera',
+                'description' => 'Entrenamiento suave para mantener músculo activo.',
                 'day' => 'sunday',
                 'start_time' => '10:30',
-                'duration_minutes' => 45,
+                'duration_minutes' => 60,
             ],
             [
-                'class_type' => 'Pilates',
-                'name' => 'Pilates Suave',
-                'description' => 'Clase relajada de pilates perfecta para domingos.',
+                'class_type' => 'Aeróbicos',
+                'name' => 'Aeróbicos Relax',
+                'description' => 'Cardio moderado para cerrar la semana con energía.',
                 'day' => 'sunday',
                 'start_time' => '11:30',
-                'duration_minutes' => 50,
+                'duration_minutes' => 60,
             ],
         ];
 

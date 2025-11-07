@@ -33,8 +33,15 @@ Route::middleware('guest')->group(function () {
 
 // Rutas protegidas (requieren autenticación)
 Route::middleware('auth')->group(function () {
+    // Dashboard Cliente
     Route::get('/dashboard', function () {
         return view('dashboard.index');
     })->name('dashboard');
+
+    // Dashboard Entrenador
+    Route::get('/trainer/dashboard', function () {
+        return view('trainer.dashboard');
+    })->name('trainer.dashboard');
+
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

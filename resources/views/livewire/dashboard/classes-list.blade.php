@@ -99,8 +99,8 @@
                                 <polyline points="12 6 12 12 16 14"></polyline>
                             </svg>
                             <span>
-                                {{ $session->day_name ?? 'N/A' }} 
-                                {{ $session->start_datetime ? $session->start_datetime->format('H:i') : 'N/A' }} - 
+                                {{ $session->day_name ?? 'N/A' }}
+                                {{ $session->start_datetime ? $session->start_datetime->format('H:i') : 'N/A' }} -
                                 {{ $session->end_time ?? 'N/A' }}
                             </span>
                         </div>

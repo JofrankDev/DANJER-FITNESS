@@ -19,7 +19,7 @@ return new class extends Migration
             //foringKeys
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             //
-            $table->string('address',50);
+            $table->string('address',50)->nullable();;
             $table->unsignedInteger('emergency_phone')->nullable();
             $table->timestamps();
 

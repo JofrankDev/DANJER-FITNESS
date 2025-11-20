@@ -91,7 +91,7 @@ class LoginController extends Controller
             // Cuando tengas dashboard de admin, descomenta esta línea:
             // return redirect()->route('admin.dashboard')
             //     ->with('success', '¡Bienvenido de nuevo, Administrador!');
-            return redirect()->route('dashboard')
+            return redirect()->route('admin.dashboard')
                 ->with('success', '¡Bienvenido de nuevo, Administrador!');
         }
 

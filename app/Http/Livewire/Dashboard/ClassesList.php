@@ -43,6 +43,8 @@ class ClassesList extends Component
         $this->view = 'types';
         $this->selectedClassType = null;
         $this->sessions = [];
+        $this->loadClassTypes();
+        
     }
 
     public function loadSessions()
@@ -50,7 +52,7 @@ class ClassesList extends Component
         if (!$this->selectedClassType) {
             return;
         }
-
+        
         $this->sessions = Session::with(['trainer.user', 'room', 'classType'])
             ->where('class_type_id', $this->selectedClassType->id)
             ->where('date', '>=', Carbon::now()->toDateString())
@@ -61,7 +63,8 @@ class ClassesList extends Component
     }
 
     public function loadUserReservations()
-    {
+    {   
+        
         $client = auth()->user()->client ?? null;
 
         if ($client) {

@@ -20,7 +20,7 @@
 
         <div class="class-types-grid">
             @forelse($classTypes as $classType)
-                <div class="class-type-card" wire:click="selectClassType({{ $classType->id }})">
+                <div class="class-type-card" wire:key="class-type-{{ $classType->id }}" wire:click="selectClassType({{ $classType->id }})">
                     <div class="class-type-icon">
                         @if($classType->name === 'Aeróbicos')
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -82,7 +82,7 @@
 
         <div class="classes-grid">
             @forelse($sessions as $session)
-                <div class="class-card">
+                <div class="class-card" wire:key="session-{{ $session->id }}">
                     <div class="class-header">
                         <span class="class-badge {{ strtolower($selectedClassType->name ?? '') }}">
                             {{ $selectedClassType->name ?? 'Clase' }}

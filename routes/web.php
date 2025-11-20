@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,16 @@ Route::middleware('auth')->group(function () {
         Route::get('/trainer/dashboard', function () {
             return view('trainer.dashboard');
         })->name('trainer.dashboard');
+    });
+
+    // Dashboard Administrador - Solo para administradores
+    Route::middleware('administrator')->group(function () {
+        Route::get('livewire/admin/dashboard', function () {
+            return view('livewire.admin.dashboard');
+        })->name('admin.dashboard');
+        
+        // Rutas de reportes
+        Route::get('/admin/reports/download', [ReportController::class, 'downloadMembershipReport'])->name('admin.reports.download');
     });
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

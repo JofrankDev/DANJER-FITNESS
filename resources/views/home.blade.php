@@ -32,7 +32,21 @@
                         <a href="{{ route('login') }}" class="btn btn-outline">Iniciar Sesión</a>
                         <a href="{{ route('register') }}" class="btn btn-primary">Registrarse</a>
                     @else
-                        <a href="{{ route('dashboard') }}" class="btn btn-primary">Mi Cuenta</a>
+                    @php
+    $user = auth()->user();
+
+    if ($user->administrator) {
+        $route = 'admin.dashboard';
+    } elseif ($user->trainer) {
+        $route = 'trainer.dashboard';
+    } elseif ($user->client) {
+        $route = 'dashboard';
+    } else {
+        $route = 'home';
+    }
+@endphp
+
+                        <a href="{{ route($route) }}" class="btn btn-primary">Mi Cuenta</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary">

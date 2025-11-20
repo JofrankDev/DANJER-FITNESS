@@ -33,8 +33,19 @@ Route::middleware('guest')->group(function () {
 
 // Rutas protegidas (requieren autenticación)
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard.index');
-    })->name('dashboard');
+    // Dashboard Cliente - Solo para clientes (no entrenadores)
+    Route::middleware('client')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard.index');
+        })->name('dashboard');
+    });
+
+    // Dashboard Entrenador - Solo para entrenadores
+    Route::middleware('trainer')->group(function () {
+        Route::get('/trainer/dashboard', function () {
+            return view('trainer.dashboard');
+        })->name('trainer.dashboard');
+    });
+
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

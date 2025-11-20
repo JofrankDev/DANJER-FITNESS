@@ -53,9 +53,9 @@
 
                 <div class="form-actions">
                     @if($editMode)
-                        <button type="submit" class="btn-edit" wire:loading.attr="disabled">
-                            <span wire:loading.remove>Guardar Cambios</span>
-                            <span wire:loading>Guardando...</span>
+                        <button type="submit" class="btn-edit" wire:loading.attr="disabled" wire:target="updateProfile">
+                            <span wire:loading.remove wire:target="updateProfile">Guardar Cambios</span>
+                            <span wire:loading wire:target="updateProfile">Guardando...</span>
                         </button>
                         <button type="button" wire:click="toggleEdit" class="btn-cancel">Cancelar</button>
                     @else

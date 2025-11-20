@@ -4,35 +4,60 @@ namespace App\Http\Livewire\Dashboard;
 
 use Livewire\Component;
 use App\Models\Session;
+use App\Models\ClassType;
 use Carbon\Carbon;
 
 class ClassesList extends Component
 {
-    public $filter = 'todas';
-    public $classes = [];
+    public $view = 'types'; // 'types' o 'sessions'
+    public $selectedClassType = null;
+    public $classTypes = [];
+    public $sessions = [];
     public $userReservations = [];
 
     public function mount()
     {
-        $this->loadClasses();
+        $this->loadClassTypes();
+    }
+
+    public function loadClassTypes()
+    {
+        $this->classTypes = ClassType::withCount([
+            'sessions' => function ($query) {
+                $query->where('date', '>=', Carbon::now()->toDateString())
+                      ->where('status', 'scheduled');
+            }
+        ])->get();
+    }
+
+    public function selectClassType($classTypeId)
+    {
+        $this->selectedClassType = ClassType::findOrFail($classTypeId);
+        $this->view = 'sessions';
+        $this->loadSessions();
         $this->loadUserReservations();
     }
 
-    public function loadClasses()
+    public function backToTypes()
     {
-        $query = Session::with(['trainer.user', 'room', 'classType'])
+        $this->view = 'types';
+        $this->selectedClassType = null;
+        $this->sessions = [];
+    }
+
+    public function loadSessions()
+    {
+        if (!$this->selectedClassType) {
+            return;
+        }
+
+        $this->sessions = Session::with(['trainer.user', 'room', 'classType'])
+            ->where('class_type_id', $this->selectedClassType->id)
             ->where('date', '>=', Carbon::now()->toDateString())
             ->where('status', 'scheduled')
             ->orderBy('date')
-            ->orderBy('start_datetime');
-
-        if ($this->filter !== 'todas') {
-            $query->whereHas('classType', function ($q) {
-                $q->where('name', 'like', '%' . $this->filter . '%');
-            });
-        }
-
-        $this->classes = $query->get();
+            ->orderBy('start_datetime')
+            ->get();
     }
 
     public function loadUserReservations()
@@ -45,13 +70,6 @@ class ClassesList extends Component
                 ->pluck('session_id')
                 ->toArray();
         }
-    }
-
-    public function setFilter($filter)
-    {
-        $this->filter = $filter;
-        $this->loadClasses();
-        $this->loadUserReservations();
     }
 
     public function reserveClass($sessionId)
@@ -106,7 +124,7 @@ class ClassesList extends Component
                 session()->flash('message', '¡Clase reservada exitosamente!');
             }
 
-            $this->loadClasses();
+            $this->loadSessions();
             $this->loadUserReservations();
 
             // Emitir evento para actualizar estadísticas
@@ -146,7 +164,7 @@ class ClassesList extends Component
             ]);
 
             session()->flash('message', 'Reserva cancelada exitosamente.');
-            $this->loadClasses();
+            $this->loadSessions();
             $this->loadUserReservations();
 
             // Emitir evento para actualizar estadísticas

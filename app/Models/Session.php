@@ -28,7 +28,7 @@ class Session extends Model
 
     protected $casts = [
         'date' => 'date',
-        'start_datetime' => 'datetime:H:i',
+        'start_datetime' => 'datetime',
     ];
 
     public function trainer() : BelongsTo

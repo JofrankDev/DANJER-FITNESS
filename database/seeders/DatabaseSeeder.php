@@ -29,7 +29,32 @@ class DatabaseSeeder extends Seeder
         $plans = Plan::factory(4)->create();
         $rooms = Room::factory(3)->create();
 
-        //
+        // ========================================
+        // USUARIO ENTRENADOR DE PRUEBA
+        // ========================================
+        $trainerUser = User::create([
+            'name' => 'Carlos',
+            'lastname' => 'Ramírez',
+            'email' => 'entrenador@gym.com',
+            'password' => bcrypt('password123'),
+            'phone' => '987654321',
+            'dni' => '12345678',
+        ]);
+
+        $mainTrainer = Trainer::create([
+            'user_id' => $trainerUser->id,
+            'speciality' => 'HIIT',
+            'years_of_experience' => 8,
+        ]);
+
+        $this->command->info('✅ Usuario Entrenador creado:');
+        $this->command->info('   Email: entrenador@gym.com');
+        $this->command->info('   Password: password123');
+        $this->command->line('');
+
+        // ========================================
+        // OTROS USUARIOS (ficticios)
+        // ========================================
         $adminUsers = User::factory(3)->create();
         $trainerUsers = User::factory(5)->create();
         $clientUsers = User::factory(15)->create();
@@ -43,6 +68,9 @@ class DatabaseSeeder extends Seeder
         $trainers = $trainerUsers->map(fn($user) => Trainer::factory()->create([
             'user_id' => $user->id,
         ]));
+
+        // Agregar el entrenador principal a la colección
+        $trainers->prepend($mainTrainer);
 
         $clients = $clientUsers->map(fn($user) => Client::factory()->create([
             'user_id' => $user->id,
